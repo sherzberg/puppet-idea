@@ -39,6 +39,7 @@ class idea::base(
   $url,
   $build,
   $target,
+  $timeout=360,
 ) {
 
   Exec {
@@ -57,6 +58,7 @@ class idea::base(
     src_target => '/var/tmp',
     target     => '/opt',
     extension  => 'tar.gz',
+    timeout    => $timeout,
   }
 
   file { $target:
